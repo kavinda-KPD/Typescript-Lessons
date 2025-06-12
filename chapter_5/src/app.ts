@@ -4,12 +4,13 @@ class Department {
   // name: string;
   // private employees: string[];
 
-  constructor(private name: string, private employees: string[]) {
+  constructor(private readonly name: string, private employees: string[]) {
     // this.name = n;
     // this.employees = [];
   }
 
   describe(this: Department) {
+    // this.name = "Accounting";
     console.log("Department from class: " + this.name);
   }
 
