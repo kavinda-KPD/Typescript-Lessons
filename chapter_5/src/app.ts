@@ -1,27 +1,34 @@
-// // Code goes here!
+// Code goes here!
 
-// class Department {
-//   name: string;
-//   constructor(n: string) {
-//     this.name = n;
-//   }
+class Department {
+  name: string;
+  private employees: string[];
 
-//   describe(this: Department) {
-//     console.log("Department from class: " + this);
-//   }
-// }
+  constructor(n: string) {
+    this.name = n;
+    this.employees = [];
+  }
 
-// const accounting = new Department("Accounting");
+  describe(this: Department) {
+    console.log("Department from class: " + this.name);
+  }
 
-// accounting.describe();
-// // let accountingCopy = new Department("Accounting Copy");
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
 
-// let accountingCopy = {
-//   ...accounting,
-//   describe: accounting.describe,
-// };
+  printEmployeeInformation() {
+    console.log(this.employees.length);
+    console.log(this.employees);
+  }
+}
 
-// // console.log(accountingCopy.describe);
-// // accountingCopy.describe();
+const accounting = new Department("Accounting");
 
-// // console.log(accounting.describe);
+accounting.addEmployee("Max");
+accounting.addEmployee("Manu");
+
+// accounting.employees[2] = "Anna";
+
+accounting.describe();
+accounting.printEmployeeInformation();
