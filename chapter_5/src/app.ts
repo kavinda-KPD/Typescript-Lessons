@@ -1,24 +1,27 @@
-// Code goes here!
+// // Code goes here!
 
-class Department {
-  name: string;
-  constructor(n: string) {
-    this.name = n;
-  }
+// class Department {
+//   name: string;
+//   constructor(n: string) {
+//     this.name = n;
+//   }
 
-  describe(this: Department) {
-    console.log("Department from class: " + this.name);
-  }
-}
+//   describe(this: Department) {
+//     console.log("Department from class: " + this);
+//   }
+// }
 
-const accounting = new Department("Accounting");
+// const accounting = new Department("Accounting");
 
-accounting.describe();
-// let accountingCopy = new Department("Accounting Copy");
+// accounting.describe();
+// // let accountingCopy = new Department("Accounting Copy");
 
-let accountingCopy = {
-  ...accounting,
-  describe: accounting.describe,
-};
+// let accountingCopy = {
+//   ...accounting,
+//   describe: accounting.describe,
+// };
 
-accountingCopy.describe();
+// // console.log(accountingCopy.describe);
+// // accountingCopy.describe();
+
+// // console.log(accounting.describe);
