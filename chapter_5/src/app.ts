@@ -1,12 +1,12 @@
 // Code goes here!
 
 class Department {
-  name: string;
-  private employees: string[];
+  // name: string;
+  // private employees: string[];
 
-  constructor(n: string) {
-    this.name = n;
-    this.employees = [];
+  constructor(private name: string, private employees: string[]) {
+    // this.name = n;
+    // this.employees = [];
   }
 
   describe(this: Department) {
@@ -23,7 +23,7 @@ class Department {
   }
 }
 
-const accounting = new Department("Accounting");
+const accounting = new Department("Accounting", ["kavin"]);
 
 accounting.addEmployee("Max");
 accounting.addEmployee("Manu");
