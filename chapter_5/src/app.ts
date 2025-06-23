@@ -1,29 +1,18 @@
-class Person {
+interface IPerson {
   name: string;
   age: number;
 
-  private static person: Person;
-
-  private constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
-
-  static createPerson(name: string, age: number) {
-    if (Person.person) {
-      return Person.person;
-    }
-
-    Person.person = new Person(name, age);
-    return Person.person;
-  }
+  greet(name: string): void;
 }
 
-// const person = new Person("John", 30);
-// console.log(person);
+let user: IPerson;
 
-const person = Person.createPerson("John", 30);
-console.log(person);
+user = {
+  name: "John",
+  age: 30,
+  greet(name: string) {
+    console.log(`Hello, ${name}!`);
+  },
+};
 
-const person2 = Person.createPerson("John", 31);
-console.log(person2);
+user.greet("Jane");
