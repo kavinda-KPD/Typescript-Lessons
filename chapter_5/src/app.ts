@@ -1,16 +1,16 @@
 // Code goes here!
 
 class Department {
-  // name: string;
-  // private employees: string[];
+  // constructor(private readonly name: string, private employees: string[]) {}
 
-  constructor(private readonly name: string, private employees: string[]) {
-    // this.name = n;
-    // this.employees = [];
-  }
+  name: string = "Default";
+  employees: string[] = ["Default"];
+  // constructor() {
+  //   this.name = "Default";
+  //   this.employees = ["default emp"];
+  // }
 
   describe(this: Department) {
-    // this.name = "Accounting";
     console.log("Department from class: " + this.name);
   }
 
@@ -19,17 +19,22 @@ class Department {
   }
 
   printEmployeeInformation() {
-    console.log(this.employees.length);
     console.log(this.employees);
   }
 }
 
-const accounting = new Department("Accounting", ["kavin"]);
+class ITDepartment extends Department {
+  constructor(name: string, employees: string[], public admins: string[]) {
+    // super(name, employees);
+    super();  
+    this.name = name;
+    this.employees = employees;
+    this.admins = admins;
+  }
+}
 
-accounting.addEmployee("Max");
-accounting.addEmployee("Manu");
+const IT1 = new ITDepartment("kavinda", ["em1", "em2"], ["admin1", "admin2"]);
 
-// accounting.employees[2] = "Anna";
-
-accounting.describe();
-accounting.printEmployeeInformation();
+console.log(IT1);
+IT1.addEmployee("em3");
+IT1.printEmployeeInformation();
